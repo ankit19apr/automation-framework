@@ -23,6 +23,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - run: sudo apt-get update && sudo apt-get install -y <required_package>
     
     - name: Set up JDK 11
       uses: actions/setup-java@v4
@@ -31,7 +32,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Running Test Automation Framework with Maven
-      run: mvn test -X "-Dbrowser" "-DisLambdaTest=true" "-DisHeadless=false"
+      run: mvn test -X -Dbrowser -DisLambdaTest=true -DisHeadless=false
 
     - name: Upload a Test logs
       if: always()
