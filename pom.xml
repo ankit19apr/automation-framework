@@ -21,7 +21,7 @@
 						<browser>chrome</browser>
 						<isLambdaTest>true</isLambdaTest>
 						<isHeadless>false</isHeadless>
-					
+
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
@@ -90,12 +90,7 @@
 			<version>2.24.1</version>
 		</dependency>
 
-		<!-- Log4j2 Core -->
-		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>2.24.1</version>
-		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
 		<dependency>
