@@ -20,7 +20,7 @@ public class LoginDataProvider {
 	public Iterator<Object[]> loginDataProvider() throws FileNotFoundException {
 		Gson gson = new Gson();
 		
-		File testDataFile = new File(System.getProperty("user.dir")+ "\\testData\\logindata.json");
+		File testDataFile = new File(System.getProperty("user.dir")+ "/testData/logindata.json");
 		FileReader fileReader = new FileReader(testDataFile);
 		TestData data = gson.fromJson(fileReader, TestData.class);//deserialization, where we are converting the json object to get the data from the json object and we are creating a java object out of it.. this is the reference to the java object
 		
