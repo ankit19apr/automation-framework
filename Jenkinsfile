@@ -57,7 +57,7 @@ pipeline {
                     sh '''
                         mkdir -p public/extent-reports
                         cp report.html public/extent-reports/
-                        cp -R screenshots/ public/extent-reports/screenshots/
+                     
                         ls -l public/extent-reports
                     '''
                 }
