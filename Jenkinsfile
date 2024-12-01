@@ -36,12 +36,7 @@ pipeline {
             }
         }
 
-        stage('Archive Screenshots') {
-            steps {
-                echo 'Uploading Screenshots...'
-                archiveArtifacts artifacts: 'screenshots/**', allowEmptyArchive: true
-            }
-        }
+       
 
         stage('Archive HTML Report') {
             steps {
