@@ -135,11 +135,11 @@ Before running this framework, ensure the following software is installed on you
 
 ```bash
 
-  git clone https://github.com/jatin99/Test-Automation-Framework.git
+  git clone https://github.com/ankit19apr/automation-framework.git
 
 
 
-  cd Test-Automation-Framework
+  cd automation-framework
 
 ```
 
