@@ -1,71 +1,215 @@
-The Test Automation Framework is a cutting-edge solution designed to deliver efficiency, scalability, and maintainability for modern testing needs. Built using Java 11, it employs a modular approach with the Page Object Model (POM) design pattern, ensuring separation of concerns and reusability. The framework integrates essential tools and utilities like Maven, TestNG, ExtentReports, Log4j, and supports advanced capabilities such as headless execution, data-driven testing, and external configuration management.
+# Test Automation Framework
 
-Key Features:
-Core Architecture
-Page Object Model (POM):
 
-Modularizes UI elements and actions into separate classes for better test maintainability.
-Simplifies updates when application UI changes.
-Java 11:
 
-Leverages modern features of Java for clean, concise, and efficient code.
-Maven:
+This is a Java-based test automation framework.
 
-Manages dependencies and ensures consistent builds.
-Provides access to plugins for CI/CD integration, reporting, and more.
-Execution and Testing
-TestNG:
 
-Supports Data Providers for data-driven testing.
-Enables parallel execution, reducing total execution time.
-Integrates with listeners for test lifecycle monitoring and custom actions.
-LambdaTest Integration:
 
-Facilitates cross-browser and cross-platform testing on a scalable cloud infrastructure.
-Offers real-device testing for enhanced test coverage.
-Headless Browser Support:
+The framework leverages various libraries and tools to facilitate data-driven testing, logging, reporting, and integration with cloud-based testing platform like lambdatest.
 
-Allows tests to run without a UI, improving execution speed in CI environments.
-Data Management Utilities
-Excel Reader Utility:
 
-Reads test data from Excel sheets, enabling dynamic and parameterized testing.
-JSON Reader Utility:
 
-Extracts test data or configuration from JSON files, supporting complex data structures.
-Properties Reader Utility:
 
-Reads configuration details (e.g., URLs, credentials, and environment settings) from properties files for flexible execution setups.
-Reporting and Debugging
-ExtentReports:
 
-Generates detailed and interactive HTML reports with screenshots, logs, and execution statuses.
-Log4j Integration:
 
-Provides a robust logging mechanism for debugging and monitoring test execution.
-Logs messages at different levels (INFO, DEBUG, ERROR) to enhance traceability.
-Listeners and Customization
-TestNG Listeners:
-Custom listeners handle events such as test start, success, failure, and skipped tests.
-Enables integration with ExtentReports and logging for comprehensive insights.
-Enhanced Scalability
-Parallel Execution:
 
-Reduces execution time by running tests simultaneously on multiple threads.
-Data Providers:
+## 🚀 About Me
 
-Facilitates parameterized testing, allowing test cases to run with multiple data sets.
-Key Functionalities
-Customizable Reporting:
+Hi, My Name is Ankit Sharma and I have 12 years of experience in QA Testing. I have 5 years of experience in Automation Testing using technologies like Selenium Webdriver, TestNG Framework, BDD Cucumber. I have handson with API testing using postman.
 
-Detailed reports with ExtentReports and logs via Log4j make tracking and debugging efficient.
-Cross-Browser Testing:
 
-Validates application behavior across various browsers and platforms, both locally and on the cloud.
-Environment Flexibility:
 
-Configuration properties allow dynamic environment selection, reducing hardcoding.
-CI/CD Integration:
 
-Works seamlessly with Jenkins, GitHub Actions, and Azure DevOps to automate testing pipelines.
-This comprehensive Test Automation Framework integrates POM, Maven, TestNG, ExtentReports, Log4j, headless execution, and utilities for data management, ensuring it meets the demands of modern, scalable, and reliable automated testing.
+
+My major expertise is in Functional Testing for UI and API (Manual and Automation) including Regression Testing, Test Management, Defect Management, Team handling, Agile (Scrum/Kanban)
+
+
+
+
+## Author
+
+
+
+- [@ankit19apr](https://github.com/ankit19apr)
+
+- EmailAddress: ankitqatechie@gmail.com
+
+
+
+
+
+
+
+
+
+## 🔗 Link
+
+- LinkedIn: https://www.linkedin.com/in/ankit19apr
+
+
+
+
+
+
+
+## Prerequisites
+
+
+
+Before running this framework, ensure the following software is installed on your system:
+
+
+
+- **Java 11** - Make sure Java is installed and the JAVA_HOME environment variable is set.
+
+- **Maven** - Ensure Maven is installed and added to the system path.
+
+- Downlod Link: https://maven.apache.org/download.cgi
+
+
+
+
+
+
+
+## Features
+
+- **Data-Driven Testing**: Using OpenCSV, Apache POI, and Gson for reading test data from CSV and Excel files and JSON.
+
+- **Cross-Browser Testing**: Supports running tests on different browsers.
+
+- **Headless Mode**: Faster execution by running tests in headless mode.
+
+- **Cloud Testing**: Integrated with LambdaTest to run tests on the cloud.
+
+- **Logging**: Uses Log4j for detailed logs.
+
+- **Reporting**: Generates detailed reports using Extent Reports.
+
+
+
+
+
+
+
+## Technologies Used
+
+- Java 11
+
+- TestNG
+
+- OpenCSV
+
+- Gson
+
+- Apache POI
+
+- Faker
+
+- LambdaTest
+
+- Log4j
+
+- Extent Reports
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Setup Instructions
+
+
+
+**Clone the Repository:**
+
+
+
+```bash
+
+  git clone https://github.com/ankit19apr/automation-framework.git
+
+
+
+  cd automation-framework
+
+```
+
+    
+
+
+
+**Running Tests on LambdaTest:**
+
+
+
+```bash
+
+     mvn test  -Dbrowser=chrome -DisLambdaTest=true -DisHeadless=false -X
+
+
+
+```
+
+
+
+
+
+**Running Tests on Chrome browser on Local Machine in Headless Mode:**
+
+
+
+```bash
+
+     mvn test  -Dbrowser=chrome -DisLambdaTest=false -DisHeadless=true -X
+
+
+
+```
+
+
+
+## Reports & Logs
+
+-Reports: After execution, a detailed HTML report will be generated at ./report.html. 
+
+
+
+The report contains information on test cases executed, passed, failed, and skipped, along with screenshots for failed tests.
+
+
+
+## Logs: 
+
+Logs are created during the test execution and stored in the ./logs/ directory. 
+
+
+
+## Integrated the project Github Actions 
+
+This automation framework is integrated with github actions.
+
+The tests will be executed at 09:00AM IST every single day. 
+
+
+
+The reports will be archieved in gh-pages branch
+
+GitHub Actions Report -> report.html
+Jenkins Report -> extent-reports/report.html
+
+You can view the html reports through GitHub Actions at:
+
+https://ankit19apr.github.io/automation-framework/report.html
+
+You can view the html reports through Jenkins at : 
+
+https://ankit19apr.github.io/automation-framework/extent-reports/report.html
