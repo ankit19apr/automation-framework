@@ -205,4 +205,4 @@ The reports will be archieved in gh-pages branch
 
 You can view the html reports at : 
 
-https://ankit19apr.github.io/Test-Automation-Framework/report.html
+https://ankit19apr.github.io/automation-framework/report.html
