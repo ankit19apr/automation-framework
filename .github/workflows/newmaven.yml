@@ -60,10 +60,10 @@ jobs:
           ls -l public/extent-reports-githubActions
           
 
-      - name: Deploy
-        if: always()
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: public/extent-reports-githubActions/
-          token: ${{ secrets.PersonalAccessToken }} 
-          clean: true
+    #  - name: Deploy
+     #   if: always()
+     #   uses: JamesIves/github-pages-deploy-action@v4
+     #   with:
+     #     folder: public/extent-reports-githubActions/
+     #     token: ${{ secrets.PersonalAccessToken }} 
+     #     clean: true
