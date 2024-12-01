@@ -22,12 +22,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up JDK 11
         uses: actions/setup-java@v4
         with:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
+
       - name: Running Test Automation Framework with Maven
         run: mvn test -X "-Dbrowser=chrome" "-DisLambdaTest=true" "-DisHeadless=false"
 
@@ -37,9 +39,7 @@ jobs:
         with:
           name: Test logs
           path: logs/
-          
-     
-          
+
       - name: Upload HTML Report as Artifact
         if: always()
         uses: actions/upload-artifact@v4.4.3
@@ -51,19 +51,36 @@ jobs:
         if: always()
         run: echo "Test Execution Completed"
 
-      - name: Copy report to gh.pages folder
+      - name: Copy report to gh.actions.pages folder
         if: always()
-        run:
+        run: |
           mkdir -p public/extent-reports-githubActions
           cp htmlreport.html public/extent-reports-githubActions/
-        
           ls -l public/extent-reports-githubActions
-          
 
-    #  - name: Deploy
-     #   if: always()
-     #   uses: JamesIves/github-pages-deploy-action@v4
-     #   with:
-     #     folder: public/extent-reports-githubActions/
-     #     token: ${{ secrets.PersonalAccessToken }} 
-     #     clean: true
+      - name: Deploy to GitHub Actions Pages
+        if: always()
+        run: |
+          # Set up git configuration
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+          # Clone the gh-actions-pages branch if it doesn't exist, otherwise pull the latest changes
+          if [ -d "gh-actions-pages" ]; then
+            echo "Directory 'gh-actions-pages' already exists, pulling latest changes..."
+            cd gh-actions-pages
+            git pull origin gh-actions-pages
+          else
+            echo "Cloning the repository into 'gh-actions-pages' directory..."
+            git clone --branch=gh-actions-pages https://${{ secrets.GITHUB_TOKEN }}@github.com/ankit19apr/automation-framework.git gh-actions-pages
+            cd gh-actions-pages
+          fi
+
+          # Create the reports directory and copy the reports
+          mkdir -p extent-reports
+          cp -R ../public/extent-reports-githubActions/* extent-reports/
+
+          # Commit and push the changes to GitHub Actions Pages
+          git add .
+          git commit -m "Deploy test reports"
+          git push origin gh-actions-pages
