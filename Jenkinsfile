@@ -1,56 +1,59 @@
 pipeline {
     agent any
 
-    environment {
-        BROWSER = 'chrome'
-        IS_LAMBDA_TEST = 'true'
-        IS_HEADLESS = 'false'
-    }
-
     triggers {
-        // Trigger the build based on the schedule (e.g., 03:30 AM daily)
-        cron('30 3 * * *')
+        cron('30 03 * * *') // Schedule build at 3:30 AM daily
+        pollSCM('H/5 * * * *') // Optional: Polls SCM every 5 minutes for changes
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://your-repository-url.git'
+                checkout scm
             }
         }
 
         stage('Set up JDK 11') {
-            tools {
-                jdk 'JDK 11' // Ensure "JDK 11" is configured in Global Tool Configuration
-            }
-        }
-
-        stage('Build and Test') {
             steps {
-                script {
-                    // Run Maven tests with specific parameters
-                    sh 'mvn test -X "-Dbrowser=${BROWSER}" "-DisLambdaTest=${IS_LAMBDA_TEST}" "-DisHeadless=${IS_HEADLESS}"'
+                echo 'Setting up JDK 11...'
+                withEnv(['JAVA_HOME=/usr/lib/jvm/java-11-openjdk', 'PATH+JAVA=$JAVA_HOME/bin']) {
+                    sh 'java -version'
                 }
             }
         }
 
-        stage('Archive Artifacts') {
+        stage('Run Maven Tests') {
             steps {
-                // Archive logs, screenshots, and reports
-                archiveArtifacts artifacts: 'logs/**, screenshots/**, report.html', fingerprint: true
+                echo 'Running Test Automation Framework with Maven...'
+                sh 'mvn test -X -Dbrowser=chrome -DisLambdaTest=true -DisHeadless=false'
             }
         }
 
-        stage('Test Execution Status') {
+        stage('Archive Test Logs') {
             steps {
-                echo 'Test Execution Completed'
+                echo 'Uploading Test Logs...'
+                archiveArtifacts artifacts: 'logs/**', allowEmptyArchive: true
             }
         }
 
-        stage('Prepare Reports for Deployment') {
+        stage('Archive Screenshots') {
             steps {
+                echo 'Uploading Screenshots...'
+                archiveArtifacts artifacts: 'screenshots/**', allowEmptyArchive: true
+            }
+        }
+
+        stage('Archive HTML Report') {
+            steps {
+                echo 'Uploading HTML Report...'
+                archiveArtifacts artifacts: 'report.html', allowEmptyArchive: true
+            }
+        }
+
+        stage('Copy Reports to Public Folder') {
+            steps {
+                echo 'Copying reports to public folder...'
                 script {
-                    // Copy reports and screenshots to a folder for deployment
                     sh '''
                         mkdir -p public/extent-reports
                         cp report.html public/extent-reports/
@@ -63,19 +66,19 @@ pipeline {
 
         stage('Deploy to GitHub Pages') {
             steps {
-                script {
-                    // Deploy artifacts to GitHub Pages (you can use a custom deployment script)
-                    withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
-                        sh '''
-                            git config user.name "Jenkins"
-                            git config user.email "jenkins@example.com"
-                            cd public/extent-reports
-                            git init
-                            git add .
-                            git commit -m "Deploy extent reports"
-                            git push --force https://$GITHUB_TOKEN@github.com/your-repository-url.git master:gh-pages
-                        '''
-                    }
+                echo 'Deploying reports to GitHub Pages...'
+                withCredentials([string(credentialsId: 'PersonalAccessToken', variable: 'GITHUB_TOKEN')]) {
+                    sh '''
+                        git config --global user.name "Jenkins CI"
+                        git config --global user.email "ci@jenkins.com"
+                        git clone --branch=gh-pages https://$GITHUB_TOKEN@github.com/<user>/<repo>.git gh-pages
+                        cd gh-pages
+                        mkdir -p extent-reports
+                        cp -R ../public/extent-reports/* extent-reports/
+                        git add .
+                        git commit -m "Deploy test reports"
+                        git push origin gh-pages
+                    '''
                 }
             }
         }
@@ -83,7 +86,7 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline execution completed!'
+            echo 'Test Execution Completed'
         }
     }
 }
