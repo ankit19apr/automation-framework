@@ -66,7 +66,7 @@ pipeline {
                     sh '''
                         git config --global user.name "Jenkins CI"
                         git config --global user.email "ci@jenkins.com"
-                        git clone --branch=gh-pages https://github.com/ankit19apr/automation-framework.git gh-pages
+                        git clone --branch=gh-pages https://$GITHUB_TOKEN@github.com/ankit19apr/automation-framework.git gh-pages
                         cd gh-pages
                         mkdir -p extent-reports
                         cp -R ../public/extent-reports/* extent-reports/
