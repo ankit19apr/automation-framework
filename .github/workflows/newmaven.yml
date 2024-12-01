@@ -51,7 +51,7 @@ jobs:
         if: always()
         run: echo "Test Execution Completed"
 
-      - name: Copy report to gh.actions.pages folder
+      - name: Copy report to gh.pages folder
         if: always()
         run: |
           mkdir -p public/extent-reports-githubActions
