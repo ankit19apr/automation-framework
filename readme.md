@@ -202,7 +202,10 @@ The tests will be executed at 09:00AM IST every single day.
 
 
 The reports will be archieved in gh-pages branch
-
-You can view the html reports at : 
+You can view the html reports through GitHub Actions at:
 
 https://ankit19apr.github.io/automation-framework/report.html
+
+You can view the html reports through Jenkins at : 
+
+https://ankit19apr.github.io/automation-framework/extent-reports/report.html
