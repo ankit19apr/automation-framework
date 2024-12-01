@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Test Automation Workflow 
+name: Test Automation Workflow
 
 on:
   schedule:
@@ -58,27 +58,16 @@ jobs:
 
       - name: Copy report to gh.pages folder
         if: always()
-
         run:
-       
-
-         
           mkdir -p public/extent-reports
-
-
           cp report.html public/extent-reports/
-
-
           cp -R screenshots/ public/extent-reports/screenshots/
-
-
           ls -l public/extent-reports
-
 
       - name: Deploy
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: public/extent-reports/
-          token: ${{ secrets.PersonalAccessToken }}
+          token: ${{ secrets.PersonalAccessToken }}  # No changes needed here
           clean: true
