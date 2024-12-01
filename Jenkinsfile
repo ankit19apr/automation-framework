@@ -59,11 +59,11 @@ pipeline {
         stage('Deploy to GitHub Pages') {
             steps {
                 echo 'Deploying reports to GitHub Pages...'
-                withCredentials([string(credentialsId: 'github-credentials', variable: 'GITHUB_TOKEN')]) {
+                withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'GITHUB_USER', passwordVariable: 'GITHUB_TOKEN')]) {
                     sh '''
                         git config --global user.name "Jenkins CI"
                         git config --global user.email "ci@jenkins.com"
-                        git clone --branch=gh-pages https://$GITHUB_TOKEN@github.com/ankit19apr/automation-framework.git gh-pages
+                        git clone --branch=gh-pages https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/ankit19apr/automation-framework.git gh-pages
                         cd gh-pages
                         mkdir -p extent-reports
                         cp -R ../public/extent-reports/* extent-reports/
