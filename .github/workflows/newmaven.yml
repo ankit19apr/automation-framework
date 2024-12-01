@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4.4.3
         with:
           name: html-report
-          path: report.html
+          path: htmlreport.html
 
       - name: Test Execution Status
         if: always()
@@ -55,7 +55,7 @@ jobs:
         if: always()
         run:
           mkdir -p public/extent-reports-githubActions
-          cp report.html public/extent-reports-githubActions/
+          cp htmlreport.html public/extent-reports-githubActions/
         
           ls -l public/extent-reports-githubActions
           
