@@ -16,7 +16,7 @@ The framework leverages various libraries and tools to facilitate data-driven te
 
 ## 🚀 About Me
 
-Hi, My Name is Ankit Sharma and I have 12 years of experience in QA Testing. I have 5 years of experience in Automation Testing using technologies like Selenium Webdriver, TestNG Framework, BDD Cucumber. I have handson with API testing using postman.
+Hi, My Name is Ankit Sharma and I have 12 years of experience in QA Testing. I have 5+ years of experience in Automation Testing using technologies like Selenium Webdriver, TestNG Framework, BDD Cucumber. I have handson with API testing using postman.
 
 
 
