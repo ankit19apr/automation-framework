@@ -197,7 +197,7 @@ Logs are created during the test execution and stored in the ./logs/ directory.
 
 This automation framework is integrated with github actions.
 
-The tests will be executed at 11:30PM IST every single day. 
+The tests will be executed at 09:00AM IST every single day. 
 
 
 
