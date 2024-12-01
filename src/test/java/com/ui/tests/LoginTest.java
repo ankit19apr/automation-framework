@@ -18,7 +18,7 @@ public class LoginTest extends TestBase {
 	
 
 	
-	  @Test(description =
+	/*  @Test(description =
 	  "To Verify valid user is able to login into application successfully", groups
 	  = {"e2e", "sanity"}, dataProviderClass =
 	  com.ui.dataprovider.LoginDataProvider.class, dataProvider =
@@ -35,7 +35,7 @@ public class LoginTest extends TestBase {
 	  assertEquals(homePage.goToLoginPage().doLoginWith(user.getEmailAddress(),
 	  user.getPassword()).getUserName(), "Ankit Sharma");
 	  
-	  }
+	  }*/
 	 
 
 	@Test(description = "To Verify valid user is able to login into application successfully", groups = { "e2e",

@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.constants.Env;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -20,9 +21,14 @@ public class LambdaTestUtility {
     	DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", browser);
         capabilities.setCapability("browserVersion", "127");
+
+        // Fetch accessKey and user from properties using PropertiesUtil
+        String accessKey = PropertiesUtil.readProperty(Env.QA, "ACCESSKEY");
+        String user = PropertiesUtil.readProperty(Env.QA, "USER");
+
         Map<String, Object> ltOptions = new HashMap<>();
-        ltOptions.put("user", "ankitqatechie");
-        ltOptions.put("accessKey", "qcAAZkom4NiVZaRidReoCUJtD94xCLb45XqkBwpbbehaYESQQe");
+        ltOptions.put("user", user);
+        ltOptions.put("accessKey", accessKey);
         ltOptions.put("build", "Selenium 4");
         ltOptions.put("name", testName);
         ltOptions.put("platformName", "Windows 10");
