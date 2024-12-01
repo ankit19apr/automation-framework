@@ -57,7 +57,8 @@ jobs:
           mkdir -p public/extent-reports-githubActions
           cp report.html public/extent-reports-githubActions/
         
-          ls -l public/extent-reports
+          ls -l public/extent-reports-githubActions
+          
 
       - name: Deploy
         if: always()
