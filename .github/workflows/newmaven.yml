@@ -54,8 +54,8 @@ jobs:
       - name: Copy report to gh.pages folder
         if: always()
         run:
-          mkdir -p public/extent-reports
-          cp report.html public/extent-reports/
+          mkdir -p public/extent-reports-githubActions
+          cp report.html public/extent-reports-githubActions/
         
           ls -l public/extent-reports
 
@@ -63,6 +63,6 @@ jobs:
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: public/extent-reports/
-          token: ${{ secrets.PersonalAccessToken }}  # No changes needed here
+          folder: public/extent-reports-githubActions/
+          token: ${{ secrets.PersonalAccessToken }} 
           clean: true
