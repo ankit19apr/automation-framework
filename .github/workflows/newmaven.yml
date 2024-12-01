@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4.4.3
         with:
           name: html-report
-          path: htmlreport.html
+          path: report.html
 
       - name: Test Execution Status
         if: always()
@@ -55,7 +55,7 @@ jobs:
         if: always()
         run: |
           mkdir -p public/extent-reports-githubActions
-          cp htmlreport.html public/extent-reports-githubActions/
+          cp report.html public/extent-reports-githubActions/
           ls -l public/extent-reports-githubActions
 
       - name: Deploy to GitHub Actions Pages
@@ -65,17 +65,22 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
-          # Clone the gh-actions-pages branch if it doesn't exist, otherwise pull the latest changes
-          if [ -d "gh-actions-pages" ]; then
-            echo "Directory 'gh-actions-pages' already exists, pulling latest changes..."
-            cd gh-actions-pages
-            git pull origin gh-actions-pages
+          # Check if gh-actions-pages branch exists, if not create it
+          git fetch
+          if git show-ref --verify --quiet refs/heads/gh-actions-pages; then
+            echo "Branch gh-actions-pages exists, checking out the branch..."
+            git checkout gh-actions-pages
           else
-            echo "Cloning the repository into 'gh-actions-pages' directory..."
-            git clone --branch=gh-actions-pages https://${{ secrets.GITHUB_TOKEN }}@github.com/ankit19apr/automation-framework.git gh-actions-pages
-            cd gh-actions-pages
+            echo "Branch gh-actions-pages does not exist, creating and checking out a new branch..."
+            git checkout --orphan gh-actions-pages
           fi
 
+          # Clone the repository if not already done
+          if [ ! -d "gh-actions-pages" ]; then
+            echo "Cloning the repository into 'gh-actions-pages' directory..."
+            git clone --branch=gh-actions-pages https://${{ secrets.GITHUB_TOKEN }}@github.com/ankit19apr/automation-framework.git gh-actions-pages
+          fi
+          
           # Create the reports directory and copy the reports
           mkdir -p extent-reports
           cp -R ../public/extent-reports-githubActions/* extent-reports/
