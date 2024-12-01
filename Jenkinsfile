@@ -36,8 +36,6 @@ pipeline {
             }
         }
 
-       
-
         stage('Archive HTML Report') {
             steps {
                 echo 'Uploading HTML Report...'
@@ -52,7 +50,6 @@ pipeline {
                     sh '''
                         mkdir -p public/extent-reports
                         cp report.html public/extent-reports/
-                     
                         ls -l public/extent-reports
                     '''
                 }
@@ -62,7 +59,7 @@ pipeline {
         stage('Deploy to GitHub Pages') {
             steps {
                 echo 'Deploying reports to GitHub Pages...'
-                withCredentials([string(credentialsId: 'PersonalAccessToken', variable: 'GITHUB_TOKEN')]) {
+                withCredentials([string(credentialsId: 'github-credentials', variable: 'GITHUB_TOKEN')]) {
                     sh '''
                         git config --global user.name "Jenkins CI"
                         git config --global user.email "ci@jenkins.com"
