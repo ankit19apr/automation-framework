@@ -63,10 +63,23 @@ pipeline {
                     sh '''
                         git config --global user.name "Jenkins CI"
                         git config --global user.email "ci@jenkins.com"
-                        git clone --branch=gh-pages https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/ankit19apr/automation-framework.git gh-pages
-                        cd gh-pages
+                        
+                        # Check if the gh-pages directory exists
+                        if [ -d "gh-pages" ]; then
+                            echo "Directory 'gh-pages' already exists, pulling latest changes..."
+                            cd gh-pages
+                            git pull origin gh-pages
+                        else
+                            echo "Cloning the repository into 'gh-pages' directory..."
+                            git clone --branch=gh-pages https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/ankit19apr/automation-framework.git gh-pages
+                            cd gh-pages
+                        fi
+                        
+                        # Create the reports directory and copy files
                         mkdir -p extent-reports
                         cp -R ../public/extent-reports/* extent-reports/
+                        
+                        # Commit and push changes
                         git add .
                         git commit -m "Deploy test reports"
                         git push origin gh-pages
