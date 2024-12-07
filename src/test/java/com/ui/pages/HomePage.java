@@ -43,11 +43,7 @@ public final class HomePage extends BrowserUtility{
 
 
 
-	public void quit() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
 	
 
 }

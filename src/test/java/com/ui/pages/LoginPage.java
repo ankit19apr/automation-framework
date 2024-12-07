@@ -26,9 +26,6 @@ public final class LoginPage extends BrowserUtility {
 		
 	}
 
-	public byte[] doLoginWith(String emailAddress, String password, String string) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 }
