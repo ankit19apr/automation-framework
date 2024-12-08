@@ -1,0 +1,103 @@
+2024-12-08 20:31:14 [main] INFO com.ui.listerners.TestListener Test Suite Started 
+2024-12-08 20:31:26 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.HomePage Visiting the website..https://www.automationpractice.pl 
+2024-12-08 20:31:34 [TestNG-test-UI Automation Test-1] INFO com.ui.listerners.TestListener loginExcelTest 
+2024-12-08 20:31:34 [TestNG-test-UI Automation Test-1] INFO com.ui.listerners.TestListener To Verify valid user is able to login into application successfully 
+2024-12-08 20:31:34 [TestNG-test-UI Automation Test-1] INFO com.ui.listerners.TestListener [e2e, sanity] 
+2024-12-08 20:31:34 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.HomePage Trying to perform click to go to Sign In Page 
+2024-12-08 20:31:34 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.HomePage Finding element with the locatorBy.xpath: //a[contains(text(), 'Sign in')] 
+2024-12-08 20:31:34 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.HomePage Element found and performing the click 
+2024-12-08 20:31:36 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='email'] 
+2024-12-08 20:31:36 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.LoginPage Element found and now enter textbajoy99768@inikale.com 
+2024-12-08 20:31:36 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='passwd'] 
+2024-12-08 20:31:36 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.LoginPage Element found and now enter textPass123 
+2024-12-08 20:31:36 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //button[@id='SubmitLogin'] 
+2024-12-08 20:31:36 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.LoginPage Element found and performing the click 
+2024-12-08 20:31:38 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.MyAccountPage Finding element with the locatorBy.xpath: //a[@title="View my customer account"]/span 
+2024-12-08 20:31:38 [TestNG-test-UI Automation Test-1] INFO com.ui.pages.MyAccountPage Element found and returning the visible testAnkit Sharma 
+2024-12-08 20:31:38 [TestNG-test-UI Automation Test-1] INFO com.ui.listerners.TestListener loginExcelTestPASSED 
+2024-12-08 20:31:40 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.HomePage Visiting the website..https://www.automationpractice.pl 
+2024-12-08 20:31:46 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.HomePage Visiting the website..https://www.automationpractice.pl 
+2024-12-08 20:31:48 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.HomePage Trying to perform click to go to Sign In Page 
+2024-12-08 20:31:48 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.HomePage Finding element with the locatorBy.xpath: //a[contains(text(), 'Sign in')] 
+2024-12-08 20:31:48 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.HomePage Element found and performing the click 
+2024-12-08 20:31:49 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='email'] 
+2024-12-08 20:31:50 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.LoginPage Element found and now enter textbajoy99768@inikale.com 
+2024-12-08 20:31:50 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='passwd'] 
+2024-12-08 20:31:50 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.LoginPage Element found and now enter textPass123 
+2024-12-08 20:31:50 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //button[@id='SubmitLogin'] 
+2024-12-08 20:31:50 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.LoginPage Element found and performing the click 
+2024-12-08 20:31:51 [TestNG-test-UI Automation Test-3] INFO com.ui.listerners.TestListener verifyProductSearchTest 
+2024-12-08 20:31:51 [TestNG-test-UI Automation Test-3] INFO com.ui.listerners.TestListener Verify if a logged in user is able to search for a product and correct product search results are displayed 
+2024-12-08 20:31:51 [TestNG-test-UI Automation Test-3] INFO com.ui.listerners.TestListener [smoke, e2e, sanity] 
+2024-12-08 20:31:51 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.MyAccountPage Finding element with the locatorBy.id: search_query_top 
+2024-12-08 20:31:52 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.MyAccountPage Element found and now enter textPrinted Summer Dress 
+2024-12-08 20:31:52 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.MyAccountPage Finding element with the locatorBy.id: search_query_top 
+2024-12-08 20:31:52 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.MyAccountPage Element found and now enter the special key 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Finding element with the locatorBy.xpath: //h5[@itemprop="name"]/a 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-2] INFO com.ui.listerners.TestListener loginTest 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-2] INFO com.ui.listerners.TestListener To Verify if the proper error message is shown for invalid credentials 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-2] INFO com.ui.listerners.TestListener [smoke, e2e, sanity] 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.HomePage Trying to perform click to go to Sign In Page 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.HomePage Finding element with the locatorBy.xpath: //a[contains(text(), 'Sign in')] 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.HomePage Element found and performing the click 
+2024-12-08 20:31:53 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Element found and now printing the list of Elements 
+2024-12-08 20:31:54 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Returning the visible testPrinted Summer Dress 
+2024-12-08 20:31:54 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Returning the visible testPrinted Summer Dress 
+2024-12-08 20:31:54 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Returning the visible testPrinted Summer Dress 
+2024-12-08 20:31:54 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Returning the visible testPrinted Summer Dress 
+2024-12-08 20:31:54 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Returning the visible testPrinted Chiffon Dress 
+2024-12-08 20:31:54 [TestNG-test-UI Automation Test-3] INFO com.ui.pages.SearchResultPage Returning the visible testPrinted Chiffon Dress 
+2024-12-08 20:31:54 [TestNG-test-UI Automation Test-3] INFO com.ui.listerners.TestListener verifyProductSearchTestPASSED 
+2024-12-08 20:31:55 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='email'] 
+2024-12-08 20:31:55 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Element found and now enter textabc@gmail.com 
+2024-12-08 20:31:55 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='passwd'] 
+2024-12-08 20:31:55 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Element found and now enter textabc@123 
+2024-12-08 20:31:55 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //button[@id='SubmitLogin'] 
+2024-12-08 20:31:55 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Element found and performing the click 
+2024-12-08 20:31:56 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //div[contains(@class,"alert-danger")]/ol/li 
+2024-12-08 20:31:56 [TestNG-test-UI Automation Test-2] INFO com.ui.pages.LoginPage Element found and returning the visible testAuthentication failed. 
+2024-12-08 20:31:56 [TestNG-test-UI Automation Test-2] INFO com.ui.listerners.TestListener loginTestPASSED 
+2024-12-08 20:32:06 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.HomePage Visiting the website..https://www.automationpractice.pl 
+2024-12-08 20:32:14 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.HomePage Trying to perform click to go to Sign In Page 
+2024-12-08 20:32:14 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.HomePage Finding element with the locatorBy.xpath: //a[contains(text(), 'Sign in')] 
+2024-12-08 20:32:14 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.HomePage Element found and performing the click 
+2024-12-08 20:32:16 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='email'] 
+2024-12-08 20:32:16 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.LoginPage Element found and now enter textbajoy99768@inikale.com 
+2024-12-08 20:32:16 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //input[@id='passwd'] 
+2024-12-08 20:32:16 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.LoginPage Element found and now enter textPass123 
+2024-12-08 20:32:16 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.LoginPage Finding element with the locatorBy.xpath: //button[@id='SubmitLogin'] 
+2024-12-08 20:32:16 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.LoginPage Element found and performing the click 
+2024-12-08 20:32:21 [TestNG-test-UI Automation Test-4] INFO com.ui.listerners.TestListener addNewAddress 
+2024-12-08 20:32:21 [TestNG-test-UI Automation Test-4] INFO com.ui.listerners.TestListener  
+2024-12-08 20:32:21 [TestNG-test-UI Automation Test-4] INFO com.ui.listerners.TestListener [] 
+2024-12-08 20:32:21 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.MyAccountPage Checking if element is present: By.xpath: //a[@title="Add my first address"] 
+2024-12-08 20:32:21 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.MyAccountPage Finding element with the locatorBy.xpath: //a[@title='Addresses'] 
+2024-12-08 20:32:21 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.MyAccountPage Element found and performing the click 
+2024-12-08 20:32:22 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.SavedAddressPage Finding element with the locatorBy.xpath: //a[@title='Add an address'] 
+2024-12-08 20:32:22 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.SavedAddressPage Element found and performing the click 
+2024-12-08 20:32:23 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: company 
+2024-12-08 20:32:23 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter textStrosin and Sons 
+2024-12-08 20:32:23 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.xpath: //input[@id='address1'] 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter text3801 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: address2 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter text6607 Peter Estates 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: city 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter textKoreychester 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: postcode 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter text17401 
+2024-12-08 20:32:24 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: phone 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter text682-706-9171 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: phone_mobile 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter text(606) 404-8394 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: other 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter textIts my address 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: alias 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and clearing the text box field 
+2024-12-08 20:32:25 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: alias 
+2024-12-08 20:32:26 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and now enter textHome Address 
+2024-12-08 20:32:26 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: id_state 
+2024-12-08 20:32:26 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Selecting the option South Dakota 
+2024-12-08 20:32:27 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Finding element with the locatorBy.id: submitAddress 
+2024-12-08 20:32:27 [TestNG-test-UI Automation Test-4] INFO com.ui.pages.AddNewAddressPage Element found and performing the click 
+2024-12-08 20:32:27 [TestNG-test-UI Automation Test-4] INFO com.ui.listerners.TestListener addNewAddressPASSED 
+2024-12-08 20:32:28 [main] INFO com.ui.listerners.TestListener Test Suite completed 

@@ -20,7 +20,7 @@
 					<systemPropertyVariables>
 						<browser>chrome</browser>
 						<isLambdaTest>true</isLambdaTest>
-						<isHeadless>false</isHeadless>
+						<isHeadless>true</isHeadless>
 
 					</systemPropertyVariables>
 				</configuration>
@@ -105,6 +105,12 @@
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
 		</dependency>
 
 

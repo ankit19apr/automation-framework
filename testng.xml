@@ -1,13 +1,17 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Automation Practice Test Suite" parallel="methods" thread-count = "4" verbose="1">
+<suite name="Automation Practice Test Suite" parallel="classes" thread-count = "4" verbose="1">
   <test name="UI Automation Test">
-	<parameter name = "browser" value = "${browser}"></parameter>
-    <parameter name = "isLambdaTest" value = "${isLambdaTest}"></parameter>
-    <parameter name = "isHeadless" value = "${isHeadless}"></parameter>
+
+	<parameter name = "browser" value = "${browser}"/>
+    <parameter name = "isLambdaTest" value = "${isLambdaTest}"/>
+    <parameter name = "isHeadless" value = "${isHeadless}"/>
 
     <classes>
        <class name="com.ui.tests.LoginTest"/>
+       <class name="com.ui.tests.InvalidCredLoginTest"/>
+       <class name="com.ui.tests.SearchProductTest"/>
+        <class name="com.ui.tests.AddNewAddressTest"/>
     </classes>
   </test>
 

@@ -3,15 +3,13 @@ package com.utility;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,6 +18,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 import com.constants.Browser;
+import org.openqa.selenium.support.ui.Select;
 
 public abstract class BrowserUtility {
 
@@ -44,7 +43,7 @@ public abstract class BrowserUtility {
 	 * System.err.println("Invalid Browser Name.. Please select Chrome or Edge"); }
 	 * }
 	 */
-	/*public BrowserUtility(Browser browserName) {
+	public BrowserUtility(Browser browserName) {
 		logger.info("Launching Browser for " + browserName);
 		if (browserName == Browser.CHROME) {
 
@@ -59,7 +58,7 @@ public abstract class BrowserUtility {
 			logger.error("Invalid Browser Name... Please select valid option");
 			System.err.println("Invalid Browser Name... Please select valid option");
 		}
-	}*/
+	}
 
 	public BrowserUtility(Browser browserName, boolean isHeadless) {
 		logger.info("Launching Browser for " + browserName);
@@ -126,15 +125,73 @@ public abstract class BrowserUtility {
 
 	}
 
+	public void clearText(By textBoxLocator) {
+		logger.info("Finding element with the locator" + textBoxLocator);
+
+		WebElement element = driver.get().findElement(textBoxLocator);
+		logger.info("Element found and clearing the text box field" );
+
+		element.clear();
+	}
+
+	public void selectFromDropDown(By dropDownLocator, String optionToSelect){
+		logger.info("Finding element with the locator" + dropDownLocator);
+		WebElement element = driver.get().findElement(dropDownLocator);
+		Select select = new Select(element);
+		logger.info("Selecting the option " + optionToSelect);
+		select.selectByVisibleText(optionToSelect);
+	}
+	public void enterSpecialKey(By locator, Keys keyToEnter) {
+		logger.info("Finding element with the locator" + locator);
+
+		WebElement element = driver.get().findElement(locator);
+		logger.info("Element found and now enter the special key" + keyToEnter);
+
+		element.sendKeys(keyToEnter);
+
+	}
+
 	public String getVisibleText(By locator) {
 
 		logger.info("Finding element with the locator" + locator);
 
 		WebElement element = driver.get().findElement(locator);
 
-		logger.info("Element found and returing the visible test" + element.getText());
+		logger.info("Element found and returning the visible test" + element.getText());
 
 		return element.getText();
+	}
+	public String getVisibleText(WebElement element ) {
+
+
+		logger.info("Returning the visible test" + element.getText());
+
+		return element.getText();
+	}
+	public List<String> getAllVisibleText(By locator) {
+
+		logger.info("Finding element with the locator" + locator);
+
+		List<WebElement> elementList = driver.get().findElements(locator);
+
+		logger.info("Element found and now printing the list of Elements");
+		List<String> visibleTextList = new ArrayList<>();
+		for(WebElement element:  elementList){
+			System.out.println(getVisibleText(element));
+			visibleTextList.add(getVisibleText(element));
+		}
+	return visibleTextList;
+
+	}
+
+	public boolean isElementPresent(By locator) {
+		try {
+			logger.info("Checking if element is present: " + locator);
+			return !driver.get().findElements(locator).isEmpty();
+		} catch (Exception e) {
+			logger.error("Error while checking element presence: " + e.getMessage());
+			return false;
+		}
 	}
 
 	public String takeScreenShot(String name) {
