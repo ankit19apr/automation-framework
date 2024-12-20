@@ -1,7 +1,5 @@
 package com.ui.tests;
 
-import static com.constants.Browser.CHROME;
-
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
@@ -17,46 +15,43 @@ import com.utility.LambdaTestUtility;
 import com.utility.LoggerUtility;
 
 public class TestBase {
-
 	protected HomePage homePage;
 	Logger logger = LoggerUtility.getLogger(this.getClass());
 	private boolean isLambdaTest;
 
+	@BeforeMethod(description = "Load the Homepage of the website")
+	@Parameters({ "browser", "isLambdaTest", "isHeadless" })
 
-	@Parameters({"browser", "isLambdaTest", "isHeadless"})
-	@BeforeMethod(description = "Load the Homepage of the Application")
-	public void setUp(
-			@Optional("chrome")String browser, 
-			@Optional("false")boolean isLambdaTest,
-			@Optional("false")boolean isHeadless, ITestResult result) {
-		
+	public void setup(@Optional("chrome") String browser, @Optional("false") boolean isLambdaTest,
+					  @Optional("false") boolean isHeadless, ITestResult result) {
+
 		this.isLambdaTest = isLambdaTest;
-		
 		WebDriver lambdaDriver;
 		if (isLambdaTest) {
 
-			lambdaDriver = LambdaTestUtility.initializeLambdaTestSession(browser, result.getMethod().getMethodName());
+			lambdaDriver = LambdaTestUtility.initializeLambdaTestSession("chrome", result.getMethod().getMethodName());
 			homePage = new HomePage(lambdaDriver);
-		} else {
-			// running the test on local machine
-			logger.info("Load the Homepage of the Application");
-			homePage = new HomePage(Browser.valueOf(browser.toUpperCase()), isHeadless);
-		}
 
+		} else {
+			// Running the test on local machine!!!
+			logger.info("Load the Homepage of the website");
+			homePage = new HomePage(Browser.valueOf("chrome".toUpperCase()), isHeadless);
+
+		}
 	}
 
 	public BrowserUtility getInstance() {
-
 		return homePage;
 	}
 
-	@AfterMethod(description = "Tear Down the Browser")
+	@AfterMethod(description = "Tear Down the browser")
 	public void tearDown() {
-		if (isLambdaTest) {
-			LambdaTestUtility.quitSession();// close the browser session on lambdatest
-		} else {
-			homePage.quit(); // close the local machine session
-		}
 
+		if (isLambdaTest) {
+			LambdaTestUtility.quitSession(); // quit or close the browsersession on LT
+		} else {
+			homePage.quit(); // local
+		}
 	}
+
 }
